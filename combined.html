@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All Three, Side by Side · A/L ICT 6.2 AR</title>
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{ --accent:#34E0B4; --bg:#0E1217; --panel:#161B22; --line:#252C36; --ink:#EAF0F6; --dim:#8C97A5; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;
+       min-height:100dvh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;
+       padding:14px 18px;border-bottom:1px solid var(--line)}
+  .crumb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--dim)}
+  .crumb b{color:var(--accent)}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none}
+  .back:hover{color:var(--ink)}
+  header{padding:22px 18px 6px}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
+       text-transform:uppercase;color:var(--accent)}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,7vw,40px);
+     line-height:1.02;margin:.18em 0 .35em;letter-spacing:-.01em}
+  .blurb{color:var(--dim);font-size:15px;line-height:1.5;max-width:60ch}
+  .stage{position:relative;margin:14px 0 0;flex:1;min-height:46vh}
+  model-viewer{width:100%;height:100%;min-height:46vh;background:
+     radial-gradient(120% 90% at 50% 18%, #1A222C 0%, #0E1217 70%);--poster-color:transparent}
+  .hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+        font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+        color:var(--dim);background:rgba(14,18,23,.7);padding:6px 12px;border-radius:999px;
+        border:1px solid var(--line);pointer-events:none}
+  .arbtn{--w:auto;position:absolute;right:16px;bottom:16px;display:inline-flex;align-items:center;
+         gap:8px;background:var(--accent);color:#06231C;font-family:'Space Grotesk',sans-serif;
+         font-weight:700;font-size:15px;border:none;border-radius:14px;padding:13px 18px;
+         box-shadow:0 8px 24px rgba(52,224,180,.28);cursor:pointer}
+  .arbtn svg{width:18px;height:18px}
+  .legend{padding:18px;border-top:1px solid var(--line);background:var(--panel)}
+  .legend h2{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
+            text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+  .row{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+  .row:first-of-type{border-top:none}
+  .sw{flex:none;width:18px;height:18px;border-radius:5px;margin-top:2px;
+      border:1px solid rgba(255,255,255,.16)}
+  .row .name{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px}
+  .row .desc{color:var(--dim);font-size:13.5px;line-height:1.45}
+  footer{padding:14px 18px 26px;color:var(--dim);font-size:12px;
+         font-family:'IBM Plex Mono',monospace;border-top:1px solid var(--line)}
+  .Hotspot{--s:18px;width:var(--s);height:var(--s);border-radius:50%;border:2px solid #06231C;
+          background:var(--accent);box-shadow:0 0 0 4px rgba(52,224,180,.25)}
+  .Hotspot[data-visible="false"]{opacity:.35}
+  .HotspotLabel{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);
+          white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;
+          background:rgba(14,18,23,.92);color:var(--ink);border:1px solid var(--line);
+          padding:4px 8px;border-radius:7px}
+  @media(prefers-reduced-motion:reduce){model-viewer{--auto-rotate:none}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <span class="crumb">A/L ICT · Unit 6.2 · <b>Compare 6.2</b></span>
+    <a class="back" href="index.html">all models →</a>
+  </div>
+  <header>
+    <div class="tag">Guided media · comparison</div>
+    <h1>All Three, Side by Side</h1>
+    <p class="blurb">Twisted pair, coaxial and fibre together at the same scale. Rotate to compare how much each one packs around its signal path.</p>
+  </header>
+  <div class="stage">
+    <model-viewer
+        src="combined.glb" ios-src="combined.usdz" alt="Cutaway 3D model of all three, side by side"
+        camera-controls touch-action="pan-y" auto-rotate rotation-per-second="18deg"
+        interaction-prompt="none" shadow-intensity="0.9" exposure="1.05"
+        ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
+        min-camera-orbit="auto auto 4%" camera-orbit="35deg 72deg 105%">
+      <button class="Hotspot" slot="hotspot-0" data-position="0.07 0.08 -0.16" data-normal="0 0 1" data-visibility-attribute="visible"><div class="HotspotLabel">Twisted pair</div></button>
+      <button class="Hotspot" slot="hotspot-1" data-position="0.07 0.08 0.0" data-normal="0 0 1" data-visibility-attribute="visible"><div class="HotspotLabel">Coaxial</div></button>
+      <button class="Hotspot" slot="hotspot-2" data-position="0.07 0.08 0.16" data-normal="0 0 1" data-visibility-attribute="visible"><div class="HotspotLabel">Fibre optic</div></button>
+      <button slot="ar-button" class="arbtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
+        View in your room
+      </button>
+      <div class="hint" slot="progress-bar"></div>
+    </model-viewer>
+    <div class="hint">Drag to rotate · pinch to zoom</div>
+  </div>
+  <section class="legend">
+    <h2>What you're looking at</h2>
+    <div class="row"><span class="sw" style="background:#1E5AA8"></span><div><div class="name">Twisted pair</div><div class="desc">Cheapest, most common, weakest against noise</div></div></div>
+    <div class="row"><span class="sw" style="background:#B87333"></span><div><div class="name">Coaxial</div><div class="desc">Better shielded, carries higher frequencies</div></div></div>
+    <div class="row"><span class="sw" style="background:#F2C200"></span><div><div class="name">Fibre optic</div><div class="desc">Fastest, longest reach, immune to noise</div></div></div>
+  </section>
+  <footer>GCE A/L ICT · Signal Transmission Media · scan-to-view AR</footer>
+</body>
+</html>
